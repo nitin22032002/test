@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error,mean_absolute_error
-
+from backend.settings import BASE_DIR
 furninsh_columns=['Gasconnection', 'AC', 'BED', 'TV', 'DiningTable', 'Sofa']
 
 def furnishingRoom(row):
@@ -30,7 +30,7 @@ maxAmt=10**6
 
 areaMax=10**3
 
-df=pd.read_csv("../Dataset/Bangalore.csv")
+df=pd.read_csv(f"{BASE_DIR}/ML/MLdataset/Bangalore.csv")
 
 df=df.apply(furnishingRoom,axis=1)
 
@@ -40,6 +40,6 @@ df['Area']/=areaMax
 
 df['Price']/=maxAmt
 
-df.to_csv("output.csv",index=False)
+df.to_csv(f"{BASE_DIR}/ML/MLModel/output.csv",index=False)
 
 print("Dataset Pre Process")

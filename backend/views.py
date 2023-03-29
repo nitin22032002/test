@@ -15,7 +15,7 @@ def predictPrice(request):
             if(item not in data):
                 return JsonResponse({"status":False,"msg":f"Parameter {item} is missing"},status=400)
             values.append(data[item])
-        model=pickle.load(open(f"{BASE_DIR}/ML/Model/model.pkl","rb"))
+        model=pickle.load(open(f"{BASE_DIR}/ML/MLModel/model.pkl","rb"))
         values=np.array(values)
         values=np.reshape(values,(1,-1))
         output=model.predict(values)[0]*(10**6)
