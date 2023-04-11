@@ -16,7 +16,7 @@ def detect(data):
     cp=data['cp']
     thal=data['thal']
     slope=data['slope']
-    values[f'cp_{cp}']=values[f'cp_{thal}']=values[f'cp_{slope}']=1
+    values[f'cp_{cp}']=values[f'thal_{thal}']=values[f'slope_{slope}']=1
     return values
 
 @csrf_exempt
@@ -24,9 +24,11 @@ def findHeart(request):
     try:
         data=json.loads(request.body)
         values=detect(data)
+        # print(values)
         values=np.array(list(values.values()))
         values=np.reshape(values,(1,-1))
         output=model.predict_proba(values)
+        # print(output,values)
         return JsonResponse({"status":True,"prob":output[0][0]})
     except Exception as e:
         print(e)

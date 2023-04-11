@@ -25,11 +25,11 @@ df = pd.concat(frames, axis = 1)
 df = df.drop(columns = ['cp', 'thal', 'slope'])
 
 # --- Seperating Dependent Features ---
-x = df.drop(['target'], axis=1)
-y = df['target']
+x = df.drop(['target'], axis=1).to_numpy()
+y = df['target'].to_numpy()
 
 # --- Data Normalization using Min-Max Method ---
-x = MinMaxScaler().fit_transform(x)
+# x = MinMaxScaler().fit_transform(x)
 
 processed_df=df
 
