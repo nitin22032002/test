@@ -11,11 +11,13 @@ def furnishingRoom(row):
     furnish_status=0
     for item in furnish:
         if(row[item]!=1):
+            furnish_status=0
             break
         else:
             furnish_status=2
     for item in semi_furnish:
         if(row[item]!=1):
+            furnish_status=0
             break
         else:
             furnish_status=max(furnish_status,1)
