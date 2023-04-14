@@ -18,7 +18,7 @@ def predictPrice(request):
         model=pickle.load(open(f"{BASE_DIR}/ML/MLModel/model.pkl","rb"))
         values=np.array(values)
         values=np.reshape(values,(1,-1))
-        output=model.predict(values)[0]*(10**6)
+        output=model.predict(values)[0]
         return JsonResponse({"status":True,"price":output})
     except Exception as e:
         print(e)
