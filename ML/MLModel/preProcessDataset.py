@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import json
 
 if __name__=="__main__":
     df=pd.read_csv("../MLdataset/final_dataset.csv")
@@ -17,8 +18,9 @@ if __name__=="__main__":
     for  i in range(len(location)):
         location_dict[location[i]]=i
 
-    drop_coumns=["City_name","Wifi","Wardrobe","MaintenanceStaff","ShoppingMall","Intercom","ATM","School","StaffQuarter","Cafeteria","MultipurposeRoom","Hospital","LiftAvailable","VaastuCompliant","Microwave","GolfCourse"]
+    json.dump(location_dict,open("values.json","w"))
 
+    drop_coumns=["City_name","Wifi","Wardrobe","MaintenanceStaff","ShoppingMall","Intercom","ATM","School","StaffQuarter","Cafeteria","MultipurposeRoom","Hospital","LiftAvailable","VaastuCompliant","Microwave","GolfCourse"]
     df.drop(drop_coumns,inplace=True,axis=1)
     df.replace(9,np.nan,inplace=True)
     df.dropna(inplace=True)

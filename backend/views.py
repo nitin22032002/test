@@ -9,7 +9,7 @@ import numpy as np
 def predictPrice(request):
     try:
         data=json.loads(request.body)
-        params="Area,No. of Bedrooms,Gymnasium,SwimmingPool,LandscapedGardens,IndoorGames,SportsFacility,ATM,ClubHouse,24X7Security,PowerBackup,CarParking,LiftAvailable,furnishing".split(",")
+        params=['Area', 'Location', 'No. of Bedrooms', 'Resale', 'Gymnasium', 'SwimmingPool', 'LandscapedGardens', 'JoggingTrack', 'RainWaterHarvesting', 'IndoorGames', 'SportsFacility', 'ClubHouse', '24X7Security', 'PowerBackup', 'CarParking', 'WashingMachine', 'Gasconnection', 'AC', "Children'splayarea", 'BED', 'TV', 'DiningTable', 'Sofa', 'Refrigerator', 'City']
         values=[]
         for item in params:
             if(item not in data):
