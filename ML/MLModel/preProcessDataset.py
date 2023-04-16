@@ -31,6 +31,8 @@ if __name__=="__main__":
             
     df=df.apply(handleLocation,axis=1)
 
+    df=df[['Area',"Location","City","Price"]]
+
     print(df.columns.to_list())
 
-    # df.to_csv("../MLdataset/dataset.csv",index=False)
+    df.to_csv("../MLdataset/dataset.csv",index=False)

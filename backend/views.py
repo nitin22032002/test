@@ -7,9 +7,9 @@ import numpy as np
 
 @csrf_exempt
 def predictPrice(request):
-    try:
+    try: 
         data=json.loads(request.body)
-        params=['Area', 'Location', 'No. of Bedrooms', 'Resale', 'Gymnasium', 'SwimmingPool', 'LandscapedGardens', 'JoggingTrack', 'RainWaterHarvesting', 'IndoorGames', 'SportsFacility', 'ClubHouse', '24X7Security', 'PowerBackup', 'CarParking', 'WashingMachine', 'Gasconnection', 'AC', "Children'splayarea", 'BED', 'TV', 'DiningTable', 'Sofa', 'Refrigerator', 'City']
+        params=['Area', 'Location', 'City']
         values=[]
         for item in params:
             if(item not in data):
