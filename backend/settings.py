@@ -59,7 +59,7 @@ TEMPLATES = [
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',  # Replace with your React app's origin
-    'https://heartminorproject.netlify.app',  # Replace with your React app's origin
+    'https://cardioguard.netlify.app',  # Replace with your React app's origin
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
