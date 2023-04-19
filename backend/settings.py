@@ -40,8 +40,9 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',  # Replace with your React app's origin
-    'https://easyappointments.netlify.app',  # Replace with your React app's origin
+    'http://localhost:3000', 
+    'http://127.0.0.1:3000', 
+    'https://easyappointments.netlify.app',
 ]
 
 ROOT_URLCONF = 'backend.urls'
